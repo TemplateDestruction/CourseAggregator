@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BestAppOne</string>
+
+    <string name="loading">Loading…</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="empty_courses">Sorry. Courses are unavailable now</string>
+
+</resources>
