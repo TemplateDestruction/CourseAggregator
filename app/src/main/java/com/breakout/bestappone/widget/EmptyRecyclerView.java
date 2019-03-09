@@ -8,9 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * @author Artur Vasilov
- */
 public class EmptyRecyclerView extends RecyclerView {
 
     @Nullable

@@ -1,12 +1,13 @@
 
-package com.breakout.bestappone.content.rightModel;
+package com.breakout.bestappone.content.udemy.courses;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class VisibleInstructor
+public class VisibleInstructor implements Parcelable
 {
 
     @SerializedName("_class")
@@ -39,9 +40,30 @@ public class VisibleInstructor
 
 
     protected VisibleInstructor(Parcel in) {
+        _class = in.readString();
+        image100x100 = in.readString();
+        title = in.readString();
+        displayName = in.readString();
+        name = in.readString();
+        url = in.readString();
+        jobTitle = in.readString();
+        initials = in.readString();
+        image50x50 = in.readString();
+
     }
 
 
+    public static final Creator<VisibleInstructor> CREATOR = new Creator<VisibleInstructor>() {
+        @Override
+        public VisibleInstructor createFromParcel(Parcel in) {
+            return new VisibleInstructor(in);
+        }
+
+        @Override
+        public VisibleInstructor[] newArray(int size) {
+            return new VisibleInstructor[size];
+        }
+    };
 
     public String getClass_() {
         return _class;
@@ -116,4 +138,21 @@ public class VisibleInstructor
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(_class);
+        dest.writeString(image100x100);
+        dest.writeString(title);
+        dest.writeString(displayName);
+        dest.writeString(name);
+        dest.writeString(url);
+        dest.writeString(jobTitle);
+        dest.writeString(initials);
+        dest.writeString(image50x50);
+    }
 }

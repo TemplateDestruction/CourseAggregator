@@ -1,6 +1,6 @@
 package com.breakout.bestappone.screen.courses;
 
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
 import com.breakout.bestappone.repository.RepositoryProvider;
 
 import io.reactivex.disposables.Disposable;
@@ -10,11 +10,11 @@ class CoursesPresenter {
     private CoursesView view;
 
 
-    public CoursesPresenter(CoursesView coursesActivity) {
+    CoursesPresenter(CoursesView coursesActivity) {
         view = coursesActivity;
     }
 
-    public void show() {
+    void show() {
 //        RepositoryProvider.getCoursesRepository().callUdemy();
 
 
@@ -42,7 +42,7 @@ class CoursesPresenter {
 
 
 
-    public void onItemClick(Result item) {
+    void onItemClick(Result item) {
         view.showDetails(item);
     }
 

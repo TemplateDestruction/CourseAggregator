@@ -9,9 +9,6 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Artur Vasilov
- */
 public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends RecyclerView.Adapter<VH> {
 
     private final List<T> mItems = new ArrayList<>();
@@ -23,7 +20,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
         if (mOnItemClickListener != null) {
             int position = (int) view.getTag();
             T item = mItems.get(position);
-            mOnItemClickListener.onItemClick(item);
+            mOnItemClickListener.onItemClick(item, view);
         }
     };
 
@@ -58,7 +55,8 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
         refreshRecycler();
     }
 
-    public void refreshRecycler() {
+
+    private void refreshRecycler() {
         notifyDataSetChanged();
         if (mRecyclerView != null) {
             mRecyclerView.checkIfEmpty();
@@ -67,7 +65,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
 
     @CallSuper
     @Override
-    public void onBindViewHolder(VH holder, int position) {
+    public void onBindViewHolder(@NonNull VH holder, int position) {
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(mInternalListener);
     }
@@ -77,7 +75,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
     }
 
     @NonNull
-    public T getItem(int position) {
+    protected T getItem(int position) {
         return mItems.get(position);
     }
 
@@ -88,7 +86,7 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends
 
     public interface OnItemClickListener<T> {
 
-        void onItemClick(@NonNull T item);
+        void onItemClick(@NonNull T item, View view);
 
     }
 

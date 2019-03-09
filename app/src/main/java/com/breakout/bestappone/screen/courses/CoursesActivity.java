@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
 import com.breakout.bestappone.screen.details.CourseDetailsActivity;
 import com.breakout.bestappone.screen.standard.LoadingDialog;
 import com.breakout.bestappone.screen.standard.LoadingView;
@@ -143,7 +143,7 @@ public class CoursesActivity extends AppCompatActivity implements CoursesView, B
     }
 
     @Override
-    public void onItemClick(@NonNull Result item) {
+    public void onItemClick(@NonNull Result item, View view) {
         mPresenter.onItemClick(item);
     }
 

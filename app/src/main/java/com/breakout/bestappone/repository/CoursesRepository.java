@@ -2,7 +2,8 @@ package com.breakout.bestappone.repository;
 
 import android.support.annotation.NonNull;
 
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
+import com.breakout.bestappone.content.udemy.reviews.Review;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public interface CoursesRepository {
     @NonNull
     Observable<List<Result>> getUdemyCourses();
 
+    @NonNull
+    Observable<List<Review>> getUdemyReviews(Integer courseId);
 //    @NonNull
 //    Observable<>
 

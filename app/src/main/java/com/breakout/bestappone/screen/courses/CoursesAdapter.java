@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
 import com.breakout.bestappone.widget.BaseAdapter;
 
 import java.util.List;
 
 public class CoursesAdapter extends BaseAdapter<CoursesHolder, Result> {
-    public CoursesAdapter(@NonNull List<Result> courses) {
+    CoursesAdapter(@NonNull List<Result> courses) {
         super(courses);
     }
 

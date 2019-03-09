@@ -5,5 +5,13 @@
 
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="empty_courses">Sorry. Courses are unavailable now</string>
+    <string name="some_course">some_course</string>
+    <string name="watch_course">watch course</string>
+    <string name="visible_instructors">Visible instructors</string>
+    <string name="course_reviews">Course Reviews</string>
+    <string name="instructor_name">Name</string>
+    <string name="instructor_profession">Profession</string>
+    <string name="btn_profile">Profile</string>
+    <string name="empty_review">None</string>
 
 </resources>

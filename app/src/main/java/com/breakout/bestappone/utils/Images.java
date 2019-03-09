@@ -3,7 +3,8 @@ package com.breakout.bestappone.utils;
 import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
+import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
 import com.squareup.picasso.Picasso;
 
 public final class Images {
@@ -20,6 +21,12 @@ public final class Images {
 
     }
 
+    public static void loadImgInstructor(@NonNull ImageView imageViewm, VisibleInstructor instructor) {
+        if (instructor.getImage100x100().length() > 0) {
+            loadImage(imageViewm, instructor.getImage100x100());
+        }
+    }
+
 
     public static void loadImage(@NonNull ImageView imageView, Result course) {
         if (course.getImage125H().length() > 0) {
@@ -27,7 +34,7 @@ public final class Images {
         }
     }
 
-    public static void loadImage(@NonNull ImageView imageView, @NonNull String posterPath) {
+    private static void loadImage(@NonNull ImageView imageView, @NonNull String posterPath) {
 //        System.out.println("getDrawable: " + imageView.getDrawable());
 //        System.out.println("ContextGetDrawable: " + imageView.getContext().getDrawable(R.drawable.default_png));
 //        if (imageView.getDrawable() == imageView.getContext().getDrawable(R.drawable.default_png)) {

@@ -16,4 +16,8 @@
     <!-- repositories items -->
     <item name="repositoryName" type="id"/>
     <item name="repositoryLanguage" type="id"/>
+
+    <!-- details items -->
+    <item name="instructors_recycler" type="id" />
+    <item name="reviews_recycler" type="id" />
 </resources>

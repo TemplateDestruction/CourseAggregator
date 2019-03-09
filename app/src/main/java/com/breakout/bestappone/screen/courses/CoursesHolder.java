@@ -7,22 +7,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.rightModel.Result;
+import com.breakout.bestappone.content.udemy.courses.Result;
 import com.breakout.bestappone.utils.Images;
 
-public class CoursesHolder extends RecyclerView.ViewHolder {
+class CoursesHolder extends RecyclerView.ViewHolder {
 
 
     private TextView titleText;
     private ImageView courseImage;
 
-    public CoursesHolder(@NonNull View itemView) {
+    CoursesHolder(@NonNull View itemView) {
         super(itemView);
         titleText = itemView.findViewById(R.id.titleView);
         courseImage = itemView.findViewById(R.id.course_image);
     }
 
-    public void bind(Result course) {
+    void bind(Result course) {
         titleText.setText(course.getTitle());
         Images.loadImage(courseImage, course);
         courseImage.setClipToOutline(true);

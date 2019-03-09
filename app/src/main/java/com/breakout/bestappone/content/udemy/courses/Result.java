@@ -1,5 +1,5 @@
 
-package com.breakout.bestappone.content.rightModel;
+package com.breakout.bestappone.content.udemy.courses;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Result implements Parcelable
@@ -35,7 +36,7 @@ public class Result implements Parcelable
     private PriceDetail priceDetail;
     @SerializedName("visible_instructors")
     @Expose
-    private List<VisibleInstructor> visibleInstructors = null;
+    private List<VisibleInstructor> visibleInstructors = new ArrayList<>();
     @SerializedName("image_125_H")
     @Expose
     private String image125H;
@@ -259,6 +260,9 @@ public class Result implements Parcelable
         dest.writeString(publishedTitle);
         dest.writeString(url);
         dest.writeString(image480x270);
+        dest.writeList(visibleInstructors);
+//        dest.writeTypedList();
+
     }
 
     public int describeContents() {

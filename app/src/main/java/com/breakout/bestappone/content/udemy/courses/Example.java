@@ -1,12 +1,12 @@
 
-package com.breakout.bestappone.content.udemyRight;
+package com.breakout.bestappone.content.udemy.courses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class UdemyResponse
+public class Example
 {
 
     @SerializedName("count")
@@ -18,15 +18,16 @@ public class UdemyResponse
     @SerializedName("previous")
     @Expose
     private Object previous;
-    @SerializedName("udemyCourses")
+    @SerializedName("results")
     @Expose
-    private List<UdemyCourse> udemyCourses = null;
+    private List<Result> results = null;
     @SerializedName("aggregations")
     @Expose
     private List<Aggregation> aggregations = null;
 
 
-    public UdemyResponse() {
+
+    public Example() {
     }
 
     public Integer getCount() {
@@ -53,12 +54,12 @@ public class UdemyResponse
         this.previous = previous;
     }
 
-    public List<UdemyCourse> getUdemyCourses() {
-        return udemyCourses;
+    public List<Result> getResults() {
+        return results;
     }
 
-    public void setUdemyCourses(List<UdemyCourse> udemyCourses) {
-        this.udemyCourses = udemyCourses;
+    public void setResults(List<Result> results) {
+        this.results = results;
     }
 
     public List<Aggregation> getAggregations() {

@@ -1,11 +1,12 @@
 package com.breakout.bestappone.api;
 
 
-import com.breakout.bestappone.content.rightModel.Example;
-import com.breakout.bestappone.content.udacityNew.NewExample;
+import com.breakout.bestappone.content.udemy.courses.Example;
+import com.breakout.bestappone.content.udemy.reviews.ReviewsResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface EducationService {
@@ -16,8 +17,8 @@ public interface EducationService {
     // https://www.udacity.com/public-api/v0/courses
     //
 //    @GET("/courses")
-    @GET("catalog?locale=en-us")
-    Observable<NewExample> getCourses();
+//    @GET("catalog?locale=en-us")
+//    Observable<NewExample> getCourses();
     // another udacity - https://catalog-api.udacity.com/v1/catalog?locale=en-us
 
 
@@ -27,6 +28,9 @@ public interface EducationService {
     //endpoint = https://www.udemy.com/api-2.0/
     @GET("courses/?page_size=20")
     Observable<Example> getUdemyResponse(@Query("page") int pageNumber);
+
+    @GET("courses/{course_id}/reviews/")
+    Observable<ReviewsResponse> getUdemyReviews(@Path("course_id") Integer courseId);
 
 //    @GET("courses/")
 //    Call<UdemyResponse> callUdemyResp();

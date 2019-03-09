@@ -1,5 +1,5 @@
 
-package com.breakout.bestappone.content.rightModel;
+package com.breakout.bestappone.content.udemy.courses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
