@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.courses.Result;
 import com.breakout.bestappone.utils.Images;
 
 class CoursesHolder extends RecyclerView.ViewHolder {

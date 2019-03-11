@@ -3,8 +3,8 @@ package com.breakout.bestappone.utils;
 import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
-import com.breakout.bestappone.content.udemy.courses.Result;
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
 import com.squareup.picasso.Picasso;
 
 public final class Images {

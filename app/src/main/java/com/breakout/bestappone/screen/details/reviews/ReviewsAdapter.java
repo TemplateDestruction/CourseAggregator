@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.reviews.Review;
+import com.breakout.bestappone.model.udemy.reviews.Review;
 import com.breakout.bestappone.widget.BaseAdapter;
 
 import java.util.List;

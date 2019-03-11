@@ -1,7 +1,7 @@
 package com.breakout.bestappone.screen.details;
 
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
-import com.breakout.bestappone.content.udemy.reviews.Review;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.reviews.Review;
 
 import java.util.List;
 

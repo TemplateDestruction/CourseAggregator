@@ -15,9 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.courses.Result;
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
-import com.breakout.bestappone.content.udemy.reviews.Review;
+import com.breakout.bestappone.model.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.reviews.Review;
 import com.breakout.bestappone.screen.details.instructors.ClickListener;
 import com.breakout.bestappone.screen.details.instructors.InstructorsAdapter;
 import com.breakout.bestappone.screen.details.reviews.ReviewsAdapter;

@@ -7,7 +7,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.reviews.Review;
+import com.breakout.bestappone.model.udemy.reviews.Review;
 
 class ReviewsHolder extends RecyclerView.ViewHolder {
 

@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.courses.Result;
 import com.breakout.bestappone.screen.details.CourseDetailsActivity;
 import com.breakout.bestappone.screen.standard.LoadingDialog;
 import com.breakout.bestappone.screen.standard.LoadingView;

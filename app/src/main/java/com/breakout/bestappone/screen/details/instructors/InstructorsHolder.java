@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
 import com.breakout.bestappone.utils.Images;
 
 import java.lang.ref.WeakReference;

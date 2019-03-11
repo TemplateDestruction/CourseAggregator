@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.breakout.bestappone.R;
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
 import com.breakout.bestappone.widget.BaseAdapter;
 
 import java.util.List;

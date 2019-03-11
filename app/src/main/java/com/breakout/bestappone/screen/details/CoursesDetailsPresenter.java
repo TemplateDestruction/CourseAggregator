@@ -1,6 +1,6 @@
 package com.breakout.bestappone.screen.details;
 
-import com.breakout.bestappone.content.udemy.courses.VisibleInstructor;
+import com.breakout.bestappone.model.udemy.courses.VisibleInstructor;
 import com.breakout.bestappone.repository.RepositoryProvider;
 
 import io.reactivex.disposables.Disposable;

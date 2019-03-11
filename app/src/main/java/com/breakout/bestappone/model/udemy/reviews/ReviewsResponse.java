@@ -1,34 +1,25 @@
 
-package com.breakout.bestappone.content.udemy.courses;
+package com.breakout.bestappone.model.udemy.reviews;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Example
-{
+public class ReviewsResponse {
 
     @SerializedName("count")
     @Expose
     private Integer count;
     @SerializedName("next")
     @Expose
-    private String next;
+    private Object next;
     @SerializedName("previous")
     @Expose
     private Object previous;
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
-    @SerializedName("aggregations")
-    @Expose
-    private List<Aggregation> aggregations = null;
-
-
-
-    public Example() {
-    }
+    private List<Review> reviews = null;
 
     public Integer getCount() {
         return count;
@@ -38,11 +29,11 @@ public class Example
         this.count = count;
     }
 
-    public String getNext() {
+    public Object getNext() {
         return next;
     }
 
-    public void setNext(String next) {
+    public void setNext(Object next) {
         this.next = next;
     }
 
@@ -54,21 +45,12 @@ public class Example
         this.previous = previous;
     }
 
-    public List<Result> getResults() {
-        return results;
+    public List<Review> getReviews() {
+        return reviews;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
-
-    public List<Aggregation> getAggregations() {
-        return aggregations;
-    }
-
-    public void setAggregations(List<Aggregation> aggregations) {
-        this.aggregations = aggregations;
-    }
-
 
 }

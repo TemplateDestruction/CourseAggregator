@@ -1,7 +1,7 @@
 package com.breakout.bestappone.screen.courses;
 
 
-import com.breakout.bestappone.content.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.courses.Result;
 import com.breakout.bestappone.screen.standard.LoadingView;
 
 import java.util.List;

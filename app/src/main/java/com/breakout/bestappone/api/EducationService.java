@@ -1,8 +1,8 @@
 package com.breakout.bestappone.api;
 
 
-import com.breakout.bestappone.content.udemy.courses.Example;
-import com.breakout.bestappone.content.udemy.reviews.ReviewsResponse;
+import com.breakout.bestappone.model.udemy.courses.Example;
+import com.breakout.bestappone.model.udemy.reviews.ReviewsResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

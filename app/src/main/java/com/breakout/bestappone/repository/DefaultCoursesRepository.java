@@ -3,8 +3,8 @@ package com.breakout.bestappone.repository;
 import android.support.annotation.NonNull;
 
 import com.breakout.bestappone.api.ApiFactory;
-import com.breakout.bestappone.content.udemy.courses.Result;
-import com.breakout.bestappone.content.udemy.reviews.Review;
+import com.breakout.bestappone.model.udemy.courses.Result;
+import com.breakout.bestappone.model.udemy.reviews.Review;
 
 import java.util.List;
 
