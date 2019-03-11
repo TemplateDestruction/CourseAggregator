@@ -8,10 +8,6 @@ import com.squareup.picasso.LruCache;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
-import io.realm.rx.RealmObservableFactory;
-
 public class BestApp extends Application {
 
     private static BestApp sInstance;
@@ -27,13 +23,14 @@ public class BestApp extends Application {
                 .build()
           ;
         Picasso.setSingletonInstance(picasso);
-        Picasso.get().setIndicatorsEnabled(true);
+//        Picasso.get().setIndicatorsEnabled(true);
 
 
 //        RealmConfiguration configuration = new RealmConfiguration.Builder(this)
 //                .rxFactory(new RealmObservableFactory())
 //                .build();
-//        Realm.setDefaultConfiguration(configuration);
+//
+//     Realm.setDefaultConfiguration(configuration);
         ApiFactory.recreate();
         RepositoryProvider.init();
     }
