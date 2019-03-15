@@ -15,20 +15,10 @@ class CoursesDetailsPresenter {
     }
 
     void show(Integer courseId) {
-//        RepositoryProvider.getCoursesRepository().callUdemy();
-
-
             Disposable disposable = RepositoryProvider.getCoursesRepository()
                     .getUdemyReviews(courseId)
                     .doOnSubscribe(view::showLoadingIndicator)
                     .doAfterTerminate(view::hideLoadingIndicator)
-//                .flatMap(new Function<List<NewCourse>, Observable<List<NewCourse>>>() {
-//                    @Override
-//                    public Observable<List<NewCourse>> apply(List<NewCourse> courses) throws Exception {
-//
-//                        return Observable.just(coursesList);
-//                    }
-//                })
                     .subscribe(view::showCourseDetails, view::showError);
     }
 
@@ -36,11 +26,4 @@ class CoursesDetailsPresenter {
         view.goToProfile(item);
     }
 
-
-
-
-
-//    public void show() {
-//        view.showCourses();
-//    }
 }

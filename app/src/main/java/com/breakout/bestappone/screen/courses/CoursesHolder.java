@@ -10,16 +10,18 @@ import com.breakout.bestappone.R;
 import com.breakout.bestappone.model.udemy.courses.Result;
 import com.breakout.bestappone.utils.Images;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 class CoursesHolder extends RecyclerView.ViewHolder {
 
 
-    private TextView titleText;
-    private ImageView courseImage;
+    @BindView(R.id.titleView) protected TextView titleText;
+    @BindView(R.id.course_image) protected ImageView courseImage;
 
     CoursesHolder(@NonNull View itemView) {
         super(itemView);
-        titleText = itemView.findViewById(R.id.titleView);
-        courseImage = itemView.findViewById(R.id.course_image);
+        ButterKnife.bind(this, itemView);
     }
 
     void bind(Result course) {
@@ -27,14 +29,6 @@ class CoursesHolder extends RecyclerView.ViewHolder {
         Images.loadImage(courseImage, course);
         courseImage.setClipToOutline(true);
 
-//        text1.setText(course.getBannerImage());
-//        text2.setText(course.getExpectedDurationUnit());
-//        text3.setText(course.getExpectedLearning());
-//        text4.setText(course.getFaq());
-//        text5.setText(course.getHomepage());
-//        text6.setText(course.getImage());
-//        text7.setText(course.getKey());
-//        text8.setText(course.getLevel());
-//        text9.setText(course.getProjectDescription());
+
     }
 }

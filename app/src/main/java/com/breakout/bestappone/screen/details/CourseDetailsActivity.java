@@ -2,6 +2,7 @@ package com.breakout.bestappone.screen.details;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,12 +25,13 @@ import com.breakout.bestappone.screen.details.reviews.ReviewsAdapter;
 import com.breakout.bestappone.screen.standard.LoadingDialog;
 import com.breakout.bestappone.screen.standard.LoadingView;
 import com.breakout.bestappone.utils.Images;
-import com.breakout.bestappone.widget.DividerItemDecoration;
 import com.breakout.bestappone.widget.EmptyRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.reactivex.disposables.Disposable;
 
 
@@ -39,10 +41,10 @@ public class CourseDetailsActivity extends AppCompatActivity implements CourseDe
 
     CoursesDetailsPresenter presenter;
 
-    ImageView courseView;
-    TextView courseTitle;
-    EmptyRecyclerView instructors;
-    EmptyRecyclerView reviews;
+    @BindView(R.id.detail_image) ImageView courseView;
+    @BindView(R.id.course_title) TextView courseTitle;
+    @BindView(R.id.instructors_recycler) EmptyRecyclerView instructors;
+    @BindView(R.id.reviews_recycler) EmptyRecyclerView reviews;
 
     LoadingView dialog;
 
@@ -63,22 +65,17 @@ public class CourseDetailsActivity extends AppCompatActivity implements CourseDe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_details_reviews);
+        ButterKnife.bind(this);
 
         course = getIntent().getParcelableExtra("course");
-
-        courseView = findViewById(R.id.detail_image);
-        courseTitle = findViewById(R.id.course_title);
-
         dialog = LoadingDialog.view(getSupportFragmentManager());
 
-        instructors = findViewById(R.id.instructors_recycler);
-        reviews = findViewById(R.id.reviews_recycler);
         LinearLayoutManager layoutManagerInstructor = new LinearLayoutManager(this);
-
         instructors.setLayoutManager(layoutManagerInstructor);
-        LinearLayoutManager layoutManagerReview = new LinearLayoutManager(this);
 
+        LinearLayoutManager layoutManagerReview = new LinearLayoutManager(this);
         reviews.setLayoutManager(layoutManagerReview);
+
         reviewsAdapter = new ReviewsAdapter(new ArrayList<>());
         reviewsAdapter.attachToRecyclerView(reviews);
 
@@ -86,41 +83,27 @@ public class CourseDetailsActivity extends AppCompatActivity implements CourseDe
         instructorsAdapter.attachToRecyclerView(instructors);
         instructorsAdapter.setListener(this);
 
-        instructors.addItemDecoration(new DividerItemDecoration(this));
-        instructors.setHasFixedSize(true);
-        instructors.setItemViewCacheSize(20);
-        instructors.setDrawingCacheEnabled(true);
-        instructors.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+        instructors.configureRecycler(this);
+        reviews.configureRecycler(this);
 
-        reviews.addItemDecoration(new DividerItemDecoration(this));
-        reviews.setHasFixedSize(true);
-        reviews.setItemViewCacheSize(20);
-        reviews.setDrawingCacheEnabled(true);
-        reviews.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-
-
-//        course = getIntent().getParcelableExtra("course");
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         presenter = new CoursesDetailsPresenter(this);
         presenter.show(course.getId());
-//        showCourse(course);
 
     }
+
+
 
     private void showCourse(Result course) {
         courseTitle.setText(course.getTitle());
         Images.loadImageDetail(courseView, course);
         courseView.setClipToOutline(true);
-
-
-
-//        reviews.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, course.get));
-        System.out.println("COURSE ID: " + course.getId());
     }
 
 
     public void onLinkGo(View view) {
-        Intent linkGo = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.udemy.com" + course.getUrl()));
+        Intent linkGo = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.site_url) + course.getUrl()));
         startActivity(linkGo);
     }
 
@@ -147,7 +130,7 @@ public class CourseDetailsActivity extends AppCompatActivity implements CourseDe
 
     @Override
     public void goToProfile(VisibleInstructor item) {
-        Intent profile = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.udemy.com" + item.getUrl()));
+        Intent profile = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.site_url) + item.getUrl()));
         startActivity(profile);
     }
 

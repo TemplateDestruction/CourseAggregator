@@ -17,9 +17,4 @@ public interface CoursesRepository {
 
     @NonNull
     Observable<List<Review>> getUdemyReviews(Integer courseId);
-//    @NonNull
-//    Observable<>
-
-//    List<UdemyCourse> callUdemy();
-
 }

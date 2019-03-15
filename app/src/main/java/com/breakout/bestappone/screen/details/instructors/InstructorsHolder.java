@@ -13,27 +13,24 @@ import com.breakout.bestappone.utils.Images;
 
 import java.lang.ref.WeakReference;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class InstructorsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
 
-    private TextView instructorName;
-    private TextView instructorProf;
-    private Button instructorProfileBtn;
-    private ImageView instructorImg;
+    @BindView(R.id.instructor_name) protected TextView instructorName;
+    @BindView(R.id.instructor_prof) protected TextView instructorProf;
+    @BindView(R.id.instructor_profile) protected Button instructorProfileBtn;
+    @BindView(R.id.instructor_img) protected ImageView instructorImg;
 
     private WeakReference<ClickListener> listenerRef;
 
     InstructorsHolder(@NonNull View itemView, ClickListener listener) {
         super(itemView);
-
         listenerRef = new WeakReference<>(listener);
-        instructorName = itemView.findViewById(R.id.instructor_name);
-        instructorProf = itemView.findViewById(R.id.instructor_prof);
-        instructorProfileBtn = itemView.findViewById(R.id.instructor_profile);
-        instructorImg = itemView.findViewById(R.id.instructor_img);
-
-        instructorProfileBtn.setOnClickListener(this    );
-
+        ButterKnife.bind(this, itemView);
+        instructorProfileBtn.setOnClickListener(this);
     }
 
     void bind(VisibleInstructor instructor) {
@@ -45,6 +42,6 @@ public class InstructorsHolder extends RecyclerView.ViewHolder implements View.O
 
     @Override
     public void onClick(View v) {
-            listenerRef.get().onPositionClicked(getAdapterPosition());
+        listenerRef.get().onPositionClicked(getAdapterPosition());
     }
 }

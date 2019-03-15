@@ -20,22 +20,16 @@ public class BestApp extends Application {
         Picasso picasso = new Picasso.Builder(this)
                 .memoryCache(new LruCache(24000))
                 .downloader(new OkHttp3Downloader(getCacheDir(), 25000000))
-                .build()
-          ;
+                .build();
         Picasso.setSingletonInstance(picasso);
-//        Picasso.get().setIndicatorsEnabled(true);
 
-
-//        RealmConfiguration configuration = new RealmConfiguration.Builder(this)
-//                .rxFactory(new RealmObservableFactory())
-//                .build();
-//
-//     Realm.setDefaultConfiguration(configuration);
         ApiFactory.recreate();
         RepositoryProvider.init();
     }
 
-    public static BestApp getAppContext() { return sInstance; }
+    public static BestApp getAppContext() {
+        return sInstance;
+    }
 
 }
 

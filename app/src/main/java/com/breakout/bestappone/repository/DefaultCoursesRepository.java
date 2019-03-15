@@ -24,7 +24,6 @@ public class DefaultCoursesRepository implements CoursesRepository {
         return ApiFactory.getEducationService()
                 .getUdemyResponse(pageNumber++)
                 .flatMap(udemyResponse -> Observable.just(udemyResponse.getResults()))
-//                .retry(3)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
 
@@ -40,7 +39,6 @@ public class DefaultCoursesRepository implements CoursesRepository {
                     System.out.println("ERROR REVIEWS: " + throwable.getLocalizedMessage());
                     return null;
                 })
-//                .retry(3)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

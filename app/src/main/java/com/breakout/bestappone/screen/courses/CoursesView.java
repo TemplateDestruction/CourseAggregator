@@ -9,8 +9,6 @@ import java.util.List;
 public interface CoursesView extends LoadingView {
     void showCourses(List<Result> courses);
 
-    void showDescription();
-
     void showError(Throwable throwable);
 
     void showDetails(Result item);

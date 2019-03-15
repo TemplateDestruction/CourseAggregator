@@ -10,13 +10,6 @@ import okhttp3.Response;
 
 final class ApiKeyInterceptor implements Interceptor {
 
-//    private final String mToken;
-
-//    private ApiKeyInterceptor() {
-//        mToken = Prefe
-//    }
-
-
     @NonNull
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
@@ -25,15 +18,6 @@ final class ApiKeyInterceptor implements Interceptor {
                 .addHeader("Accept", "application/json, text/plain, */*")
                 .addHeader("Content-Type", "application/json;charset=utf-8")
                 .build();
-
-//        HttpUrl url = request.url().newBuilder()
-//                .addQueryParameter("api_key", BuildConfig.API_KEY)
-//
-//                .build();
-//        request = request.newBuilder()
-//                .url(url)
-//                .build();
         return chain.proceed(request);
-
     }
 }

@@ -54,6 +54,14 @@ public class EmptyRecyclerView extends RecyclerView {
         }
         setVisibility(GONE);
     }
+
+    public void configureRecycler(Context context) {
+        addItemDecoration(new DividerItemDecoration(context));
+        setHasFixedSize(true);
+        setItemViewCacheSize(20);
+        setDrawingCacheEnabled(true);
+        setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+    }
 }
 
 

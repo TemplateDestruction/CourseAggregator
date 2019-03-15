@@ -13,5 +13,6 @@
     <string name="instructor_profession">Profession</string>
     <string name="btn_profile">Profile</string>
     <string name="empty_review">None</string>
+    <string name="site_url">https://www.udemy.com</string>
 
 </resources>

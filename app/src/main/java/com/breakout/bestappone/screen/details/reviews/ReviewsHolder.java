@@ -9,21 +9,19 @@ import android.widget.TextView;
 import com.breakout.bestappone.R;
 import com.breakout.bestappone.model.udemy.reviews.Review;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 class ReviewsHolder extends RecyclerView.ViewHolder {
 
 
-    private TextView reviewUser;
-    private RatingBar ratingBar;
-    private TextView reviewContent;
-
-
+    @BindView(R.id.review_user) protected TextView reviewUser;
+    @BindView(R.id.ratingBar) protected RatingBar ratingBar;
+    @BindView(R.id.review_content) protected TextView reviewContent;
 
     ReviewsHolder(@NonNull View itemView) {
         super(itemView);
-        reviewUser = itemView.findViewById(R.id.review_user);
-        ratingBar = itemView.findViewById(R.id.ratingBar);
-        reviewContent = itemView.findViewById(R.id.review_content);
-
+        ButterKnife.bind(this, itemView);
     }
 
     void bind(Review review) {
@@ -32,14 +30,5 @@ class ReviewsHolder extends RecyclerView.ViewHolder {
         if (review.getContent() != null) {
             reviewContent.setText(review.getContent());
         }
-//        text1.setText(course.getBannerImage());
-//        text2.setText(course.getExpectedDurationUnit());
-//        text3.setText(course.getExpectedLearning());
-//        text4.setText(course.getFaq());
-//        text5.setText(course.getHomepage());
-//        text6.setText(course.getImage());
-//        text7.setText(course.getKey());
-//        text8.setText(course.getLevel());
-//        text9.setText(course.getProjectDescription());
     }
 }
