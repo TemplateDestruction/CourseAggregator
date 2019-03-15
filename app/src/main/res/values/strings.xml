@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BestAppOne</string>
+    <string name="app_name">Courses Aggregator</string>
 
     <string name="loading">Loading…</string>
 
@@ -13,6 +13,7 @@
     <string name="instructor_profession">Profession</string>
     <string name="btn_profile">Profile</string>
     <string name="empty_review">None</string>
-    <string name="site_url">https://www.udemy.com</string>
+    <string name="site_url" translatable="false">https://www.udemy.com</string>
+    <string name="list_of_all_courses">List of all courses</string>
 
 </resources>

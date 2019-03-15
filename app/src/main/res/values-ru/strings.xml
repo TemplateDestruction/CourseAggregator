@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Courses Aggregator</string>
+
+    <string name="loading">Загрузка…</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="empty_courses">Извините, курсы сейчас недоступны</string>
+    <string name="some_course">Курс</string>
+    <string name="watch_course">Посмотреть курс</string>
+    <string name="visible_instructors">Преподователи курса</string>
+    <string name="course_reviews">Отзывы о курсе</string>
+    <string name="instructor_name">Имя</string>
+    <string name="instructor_profession">Профессия</string>
+    <string name="btn_profile">Профиль</string>
+    <string name="empty_review">None</string>
+    <string name="site_url">https://www.udemy.com</string>
+    <string name="list_of_all_courses">Список всех курсов</string>
+
+</resources>

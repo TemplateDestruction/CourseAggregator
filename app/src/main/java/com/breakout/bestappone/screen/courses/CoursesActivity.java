@@ -45,6 +45,8 @@ public class CoursesActivity extends AppCompatActivity implements CoursesView, B
     @BindView(R.id.empty)
     View mEmptyView;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +104,7 @@ public class CoursesActivity extends AppCompatActivity implements CoursesView, B
         throwable.fillInStackTrace();
         Toast.makeText(this, "ERROR LOADING", Toast.LENGTH_SHORT).show();
         mAdapter.clear();
+        mRecyclerView.setEmptyView(mEmptyView);
     }
 
     @Override
